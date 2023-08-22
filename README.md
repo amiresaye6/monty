@@ -29,25 +29,27 @@ Common implementations of stacks and queues can be done using arrays or linked l
 - Print job management 🖨️
 - Simulating real-world queues 🚶‍♀️🚶‍♂️
 
+## Follow the provided guidelines for proper execution.
+
+# Execution 🏃‍♀️🏃‍♂️
+The Monty program runs Monty byte codes line by line until:
+
+All lines are executed successfully.
+An error is encountered in the file.
+An error occurs during execution.
+
+# Memory Management 🧠
+The program uses malloc and free for memory management. If memory allocation fails, an error message is displayed, and the program exits.
+
+# Get Started 🚀
+Clone this repository.
+Compile the Monty program.
+Run Monty with your Monty byte code files.
+Happy Monty coding! 😎🎉
+
 ## Usage 🛠️
 
 To use the Monty program, run the following command:
 
 ```shell
 $ ./monty file
-Follow the provided guidelines for proper execution.
-
-Execution 🏃‍♀️🏃‍♂️
-The Monty program runs Monty byte codes line by line until:
-
-All lines are executed successfully.
-An error is encountered in the file.
-An error occurs during execution.
-Memory Management 🧠
-The program uses malloc and free for memory management. If memory allocation fails, an error message is displayed, and the program exits.
-
-Get Started 🚀
-Clone this repository.
-Compile the Monty program.
-Run Monty with your Monty byte code files.
-Happy Monty coding! 😎🎉
