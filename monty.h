@@ -39,6 +39,7 @@ typedef struct instruction_s
 
 extern stack_t *top;
 
+void run_op(char op[], int line_num);
 FILE *openFile(const char *filename, const char *mode);
 void push(int i);
 void pall();
