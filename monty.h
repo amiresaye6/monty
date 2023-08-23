@@ -41,6 +41,9 @@ extern stack_t *top;
 
 void push(int i);
 void pall();
+void pint();
 void pop();
-int pint();
+void swap();
+void add();
+void nop();
 #endif

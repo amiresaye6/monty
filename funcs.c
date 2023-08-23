@@ -2,7 +2,8 @@
 
 stack_t *top = NULL;
 
-void push(int value) {
+void push(int value)
+{
     stack_t *newNode = (stack_t *)malloc(sizeof(stack_t));
     if (newNode == NULL) {
         fprintf(stderr, "Error: malloc failed\n");
@@ -19,8 +20,8 @@ void push(int value) {
 
     top = newNode;
 }
-
-void pop() {
+void pop()
+{
     stack_t *temp = top;
 
     if (top == NULL) {
@@ -45,11 +46,20 @@ void pall()
         temp = temp->next;
     }
 }
-int pint() {
+void pint()
+{
     if (top == NULL) {
         fprintf(stderr, "Error: Stack is empty\n");
         exit(EXIT_FAILURE);
     }
 
-    return top->n;
+    printf("%d\n", top->n);
+}
+void swap()
+{
+    int temp;
+
+    temp = top->n;
+    top->n =(top->next)->n;
+    (top->next)->n = temp; 
 }

@@ -57,6 +57,37 @@ int main(int argc, char *argv[])
 		{
 			if (strcmp(word, "pall") == 0)
 				pall();
+			else if (strcmp(word, "pint") == 0)
+			{
+				if (!top)
+				{
+					fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+					exit(EXIT_FAILURE);
+				}
+				else
+					pint();
+			}
+			else if (strcmp(word, "pop") == 0)
+			{
+				if (!top)
+				{
+					fprintf(stderr, "L%d: can't pop, stack empty\n", line_num);
+					exit(EXIT_FAILURE);
+				}
+				else
+					pop();
+			}
+			else if (strcmp(word, "swap") == 0)
+			{
+				if (!top || !top->next)
+				{
+					fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
+					exit(EXIT_FAILURE);
+				}
+				else
+					swap();
+			}
+
 		}
 		line_num++;
 	}
