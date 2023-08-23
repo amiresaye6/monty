@@ -13,14 +13,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
-	fpionter = fopen(argv[1], "r");
-	if (!fpionter)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
-
+	fpionter = openFile(argv[1], "r");
 	while (fgets(line, sizeof(line), fpionter))
 	{
 		char cleanedLine[100];
@@ -58,30 +51,38 @@ int main(int argc, char *argv[])
 			if (strcmp(word, "pall") == 0)
 				pall();
 			else if (strcmp(word, "pint") == 0)
-			{
-					pint(line_num);
-			}
+				pint(line_num);
 			else if (strcmp(word, "pop") == 0)
-			{
-					pop(line_num);
-			}
+				pop(line_num);
 			else if (strcmp(word, "swap") == 0)
-			{
-					swap(line_num);
-			}
+				swap(line_num);
 			else if (strcmp(word, "add") == 0)
+				add(line_num);
+			else
 			{
-					add(line_num);
+				if (strcmp(word, "push") == 0)
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_num);
+				exit(EXIT_FAILURE);
 			}
-			else{
 				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, word);
 				exit(EXIT_FAILURE);
 			}
 		}
 		line_num++;
 	}
-
 	fclose(fpionter);
-
 	return (EXIT_SUCCESS);
+}
+
+FILE *openFile(const char *filename, const char *mode)
+{
+	FILE *file = fopen(filename, mode);
+
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		exit(EXIT_FAILURE);
+	}
+	return (file);
 }
