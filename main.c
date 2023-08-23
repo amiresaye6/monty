@@ -59,35 +59,24 @@ int main(int argc, char *argv[])
 				pall();
 			else if (strcmp(word, "pint") == 0)
 			{
-				if (!top)
-				{
-					fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
-					exit(EXIT_FAILURE);
-				}
-				else
-					pint();
+					pint(line_num);
 			}
 			else if (strcmp(word, "pop") == 0)
 			{
-				if (!top)
-				{
-					fprintf(stderr, "L%d: can't pop, stack empty\n", line_num);
-					exit(EXIT_FAILURE);
-				}
-				else
-					pop();
+					pop(line_num);
 			}
 			else if (strcmp(word, "swap") == 0)
 			{
-				if (!top || !top->next)
-				{
-					fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
-					exit(EXIT_FAILURE);
-				}
-				else
-					swap();
+					swap(line_num);
 			}
-
+			else if (strcmp(word, "add") == 0)
+			{
+					add(line_num);
+			}
+			else{
+				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, word);
+				exit(EXIT_FAILURE);
+			}
 		}
 		line_num++;
 	}

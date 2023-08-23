@@ -20,22 +20,25 @@ void push(int value)
 
     top = newNode;
 }
-void pop()
+void pop(int line_num)
 {
     stack_t *temp = top;
 
-    if (top == NULL) {
-        fprintf(stderr, "Error: Stack is empty\n");
+    if (!top)
+    {
+        fprintf(stderr, "L%d: can't pop an empty stack\n", line_num);
         exit(EXIT_FAILURE);
     }
+    else
+    {
+        top = top->next;
+        if (top != NULL)
+        {
+            top->prev = NULL;
+        }
 
-    top = top->next;
-
-    if (top != NULL) {
-        top->prev = NULL;
+        free(temp);
     }
-
-    free(temp);
 }
 void pall()
 {
@@ -46,20 +49,29 @@ void pall()
         temp = temp->next;
     }
 }
-void pint()
+void pint(int line_num)
 {
-    if (top == NULL) {
-        fprintf(stderr, "Error: Stack is empty\n");
+    if (!top)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
         exit(EXIT_FAILURE);
     }
-
-    printf("%d\n", top->n);
+    else
+        printf("%d\n", top->n);
 }
-void swap()
+void swap(int line_num)
 {
     int temp;
 
-    temp = top->n;
+    if (!top || !top->next)
+				{
+					fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
+					exit(EXIT_FAILURE);
+				}
+	else
+    {
+        temp = top->n;
     top->n =(top->next)->n;
-    (top->next)->n = temp; 
+    (top->next)->n = temp;
+    }
 }
