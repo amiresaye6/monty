@@ -1,13 +1,6 @@
-push      98 dsafdsafa                   fdfsd
-               push             2
-push                  5
-swap
-nop
-nop
-add
-push 50
-                          pall fsaf
-
-
-
-           
+push 1
+push 2
+push 10
+push 3
+add dfs
+pall smit

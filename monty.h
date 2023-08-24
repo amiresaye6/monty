@@ -6,7 +6,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -18,9 +17,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -33,8 +32,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *top;
@@ -42,10 +41,13 @@ extern stack_t *top;
 void run_op(char op[], int line_num);
 FILE *openFile(const char *filename, const char *mode);
 void push(int i);
-void pall();
+void pall(void);
 void pint(int line_num);
 void pop(int line_num);
 void swap(int line_num);
 void add(int line_num);
-void nop();
+void nop(void);
+void sub(int line_num);
+void div_e(int line_num);
+void mul(int line_num);
 #endif

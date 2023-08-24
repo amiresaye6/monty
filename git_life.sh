@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "normal commit"
+git commit -m "adding sub mul div and fixing betty style"
 git push

@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * main - all the stuff happens here
+ * @argc: number of arguments after the ./main
+ * @argv: list of these arguments
+ *
+ * Return: 0 if succedded or EXIT_FAILURE if any thing wrong happens
+*/
 int main(int argc, char *argv[])
 {
 	FILE *fpionter;
@@ -43,6 +50,13 @@ FILE *openFile(const char *filename, const char *mode)
 	}
 	return (file);
 }
+
+/**
+ * run_op - functions checks and runs each operator
+ * @line_num: the number of the line currently running
+ * @op: string contains the operator
+ * Return: void
+*/
 void run_op(char op[], int line_num)
 {
 	if (strcmp(op, "pall") == 0)
@@ -57,6 +71,12 @@ void run_op(char op[], int line_num)
 		add(line_num);
 	else if (strcmp(op, "nop") == 0)
 		nop();
+	else if (strcmp(op, "sub") == 0)
+		sub(line_num);
+	else if (strcmp(op, "div") == 0)
+		div_e(line_num);
+	else if (strcmp(op, "mul") == 0)
+		mul(line_num);
 	else
 	{
 		if (strcmp(op, "push") == 0)
