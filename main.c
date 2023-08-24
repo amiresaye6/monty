@@ -24,6 +24,11 @@ int main(int argc, char *argv[])
 	{
 		if (sscanf(line, "%4s %d", word, &number) == 2)
 		{
+			if (word[0] == '#')
+		{
+			line_num++;
+			continue;
+		}
 			if (strcmp(word, "push") == 0)
 				push(number);
 			else
@@ -31,6 +36,11 @@ int main(int argc, char *argv[])
 		}
 		else if (sscanf(line, "%4s", word) == 1)
 		{
+			if (word[0] == '#')
+			{
+				line_num++;
+				continue;
+			}
 			run_op(word, line_num);
 		}
 		line_num++;
@@ -77,6 +87,10 @@ void run_op(char op[], int line_num)
 		div_e(line_num);
 	else if (strcmp(op, "mul") == 0)
 		mul(line_num);
+	else if (strcmp(op, "mod") == 0)
+		mod(line_num);
+	else if (strcmp(op, "pchar") == 0)
+		pchar(line_num);
 	else
 	{
 		if (strcmp(op, "push") == 0)

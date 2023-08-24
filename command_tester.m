@@ -1,6 +1,3 @@
-push 1
-push 2
-push 10
-push 3
-add dfs
-pall smit
+push 72
+pchar
+#willl it work or not idk

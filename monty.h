@@ -50,4 +50,6 @@ void nop(void);
 void sub(int line_num);
 void div_e(int line_num);
 void mul(int line_num);
+void mod(int line_num);
+void pchar(int line_num);
 #endif
