@@ -49,3 +49,19 @@ void pchar(int line_num)
 	else
 		printf("%c\n", top->n);
 }
+
+/**
+ * free_stack - frees the stack after excutation
+ *
+ * Return: void
+ */
+void free_stack(void)
+{
+	stack_t *temp = top;
+	while (top)
+	{
+		temp = top->next;
+		free(top);
+		top = temp;
+	}
+}

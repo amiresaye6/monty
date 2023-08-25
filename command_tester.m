@@ -1,3 +1,4 @@
-push 72
-pchar
-#willl it work or not idk
+push 1
+push 2
+push 3
+pall

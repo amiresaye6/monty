@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 		line_num++;
 	}
 	fclose(fpionter);
+	free_stack();
 	return (EXIT_SUCCESS);
 }
 
