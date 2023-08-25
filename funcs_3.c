@@ -58,6 +58,7 @@ void pchar(int line_num)
 void free_stack(void)
 {
 	stack_t *temp = top;
+
 	while (top)
 	{
 		temp = top->next;
