@@ -1,2 +1,2 @@
 push 1
-pinte
+pushe 2

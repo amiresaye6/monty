@@ -36,7 +36,7 @@ void mod(int line_num)
  */
 void pchar(int line_num)
 {
-	if (top->n > 255 || top->n < 0)
+	if (top->n > 127 || top->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
 		exit(EXIT_FAILURE);
@@ -48,6 +48,29 @@ void pchar(int line_num)
 	}
 	else
 		printf("%c\n", top->n);
+}
+
+/**
+ * pstr - prints the word ressimbled on the stack
+ * @line_num: the current line running
+ * Return: void
+ */
+
+void pstr(void)
+{
+	stack_t *temp = top;
+	while (temp)
+	{
+		if (temp->n > 127 || temp->n <= 0)
+			temp = NULL;
+		else
+		{
+			printf("%c", temp->n);
+			temp = temp->next;
+		}
+	}
+	printf("\n");
+
 }
 
 /**

@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	fpionter = openFile(argv[1], "r");
 	while (fgets(line, sizeof(line), fpionter))
 	{
-		if (sscanf(line, "%4s %d", word, &number) == 2)
+		if (sscanf(line, "%s %d", word, &number) == 2)
 		{
 			if (word[0] == '#')
 		{
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 			else
 				run_op(word, line_num);
 		}
-		else if (sscanf(line, "%4s", word) == 1)
+		else if (sscanf(line, "%s", word) == 1)
 		{
 			if (word[0] == '#')
 			{
@@ -90,6 +90,8 @@ void run_op(char op[], int line_num)
 		mul(line_num);
 	else if (strcmp(op, "mod") == 0)
 		mod(line_num);
+	else if (strcmp(op, "pstr") == 0)
+		pstr();
 	else if (strcmp(op, "pchar") == 0)
 		pchar(line_num);
 	else

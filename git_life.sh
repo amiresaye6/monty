@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "memory leak fix"
+git commit -m "debuging and addig pstr & pchar"
 git push
