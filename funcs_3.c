@@ -52,13 +52,13 @@ void pchar(int line_num)
 
 /**
  * pstr - prints the word ressimbled on the stack
- * @line_num: the current line running
  * Return: void
  */
 
 void pstr(void)
 {
 	stack_t *temp = top;
+
 	while (temp)
 	{
 		if (temp->n > 127 || temp->n <= 0)
