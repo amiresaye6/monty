@@ -36,14 +36,14 @@ void mod(int line_num)
  */
 void pchar(int line_num)
 {
-	if (top->n > 127 || top->n < 0)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
-		exit(EXIT_FAILURE);
-	}
-	else if (!top)
+	if (!top)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	else if (top->n > 127 || top->n < 0)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 	else
